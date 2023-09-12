@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Google-Drive</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+  <div id="nav">
+    <div id="navleft">
+      <i class="ri-search-line"></i>
+      <i class="ri-equalizer-line"></i>
+      <form action="" method="post">
+        <input id="searchinput" type="text" placeholder="search in drive">
+      </form>
+    </div>
+    <div id="navright">
+      <i class="ri-question-line"></i>
+      <i class="ri-settings-3-line"></i>
+      <i class="ri-grid-fill"></i>
+      <img src="" alt="">
+    </div>
+  </div>
+  <div id="main">
+    <div id="left">
+      <div id="logodiv">
+        <img src="https://logowik.com/content/uploads/images/google-drive-new9328.logowik.com.webp" alt="">
+      </div>
+      <button id="new">
+        <i class="ri-add-line"></i>
+        <h3>New</h3>
+      </button>
+      <form id="fileform" action="/uploadfiles" method="post" enctype="multipart/form-data">
+        <input id="fileinp" type="file" name="file" placeholder="file">
+        <input type="submit">
+      </form>
+      <div id="list">
+        <a style="background-color: #C2E7FF;" href="">
+          <i class="ri-arrow-right-s-fill"></i>
+          <i class="ri-drive-fill"></i>
+          <h4>my drive</h4>
+        </a>
+        <a href="">
+          <i class="ri-arrow-right-s-fill"></i>
+          <i class="ri-macbook-line"></i>
+          <h4>computers</h4>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-group-fill"></i>
+          <h4>shared with me</h4>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-time-line"></i>
+          <h4>recent</h4>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-star-line"></i>
+          <h4>sharred</h4>
+        </a>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-information-line"></i>
+          <h4>spam</h4>
+        </a>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-delete-bin-6-line"></i>
+          <h4>trash</h4>
+        </a>
+        <a id="arroww" href="">
+          <i class="ri-cloudy-2-line"></i>
+          <h4>storage</h4>
+        </a>
+      </div>
+      <div id="storage">
+        <div id="line">
+          <span></span>
+        </div>
+        <h4>500 MB of 15 GB used</h4>
+      </div>
+      <div id="more">Get more storage</div>
+    </div>
+    <div id="right">
+      <div id="top">
+        <div id="navv">
+          <button id="my">my drive <i class="ri-arrow-down-s-fill"></i></button>
+          <div id="navvright">
+            <i class="ri-function-line"></i>
+            <i class="ri-information-line"></i>
+          </div>
+        </div>
+        <div id="down">
+          <button id="type">type <i class="ri-arrow-down-s-fill"></i></button>
+          <button id="people">people <i class="ri-arrow-down-s-fill"></i></button>
+          <button id="modified">modified <i class="ri-arrow-down-s-fill"></i></button>
+
+        </div>
+      </div>
+      <div id="mydrive">
+        <div id="suggest">
+          <h5>suggested</h5>
+          <div class="box">
+            <h4><i class="ri-clapperboard-fill"></i> filename</h4>
+            <div id="content"></div>
+            <p>you opened in past year</p>
+          </div>
+          <div class="box">
+            <h4><i class="ri-image-fill"></i> filename</h4>
+            <div id="content"></div>
+            <p>you opened in past year</p>
+          </div>
+          <div class="box">
+            <h4><i class="ri-clapperboard-fill"></i> filename</h4>
+            <div id="content"></div>
+            <p>you opened in past year</p>
+          </div>
+          <div class="box">
+            <h4><i class="ri-clapperboard-fill"></i> filename</h4>
+            <div id="content"></div>
+            <p>you opened in past year</p>
+          </div>
+          <div class="box">
+            <h4><i class="ri-clapperboard-fill"></i> filename</h4>
+            <div id="content"></div>
+            <p>you opened in past year</p>
+          </div>
+        </div>
+        <div id="datanav">
+          <div id="namediv">
+            <h3>Name</h3>
+            <i class="ri-arrow-down-line"></i>
+          </div>
+          <div id="owner">
+            <h3>owner</h3>
+          </div>
+          <div id="lastmodified">
+            <div id="w">
+              <h3>last modified</h3>
+              <i class="ri-arrow-down-s-fill"></i>
+            </div>
+          </div>
+          <div id="filesize">
+            <h3>file size</h3>
+          </div>
+        </div>
+        <div id="data">
+          
+          <% user.files.forEach((data,index)=>{ %>
+            <a id="file" href="/file/<%=data.file%>">
+              <div id="namediv">
+                <i class="ri-clapperboard-fill"></i>
+                <h3>
+                  <%= data.file %>
+                </h3>
+              </div>
+              <div id="owner">
+                <div id="myprofileimage"></div>
+                <h3>me</h3>
+              </div>
+              <div id="lastmodified">
+                <div class="date" id="w">
+                  <h3>
+                    <%=data.Date%>
+                  </h3>
+                </div>
+              </div>
+              <div id="filesize">
+                <h3>33.5 mb</h3>
+              </div>
+              <div id="hiddennav">
+                <div id="hiddenicons">
+                  <i class="ri-user-shared-line"></i>
+                  <i class="ri-download-2-line"></i>
+                  <i class="ri-edit-2-line"></i>
+                  <i class="ri-star-line"></i>
+                </div>
+                <i class="ri-more-2-line"></i>
+              </div>
+            </a>
+            <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+    integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // gsap.to("#datanav",{
+    //   backgroundColor:"blue",
+    //   // top:"50%",
+    //   // position:"fixed",
+
+    //   scrollTrigger:{
+    //     trigger:"#datanav",
+    //     scroller:"#mydrive",
+    //     start:"top 1%",
+    //     end:"5%",
+    //     scrub:true,
+    //     markers:true
+    //   }
+    // })
+
+    // function abcd(index){
+    //   alert(index)
+    // }
+    // document.querySelector("#file").addEventListener("click",()=>{
+    //   abcd(index)
+    // })
+    // var files = document.querySelector("#file")
+
+
+    // function openfile(index, file) {
+
+    //   const filePath = '/Users/hi/OneDrive/Desktop/googledrive/public/uploads/${filename}';
+
+    //   // Check if the file exists
+    //   fs.access(filePath, fs.constants.F_OK, (err) => {
+    //     if (err) {
+    //       console.error('File not found.');
+    //       return;
+    //     }
+
+    //     // Open the file using the default system viewer
+    //     exec(`open "${filePath}"`, (error, stdout, stderr) => {
+    //       if (error) {
+    //         console.error(`Error opening file: ${error.message}`);
+    //         return;
+    //       }
+    //       console.log('File opened successfully.');
+    //     });
+    //   });
+
+    // }
+
+
+
+  </script>
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

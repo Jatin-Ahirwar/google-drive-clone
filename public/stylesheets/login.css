@@ -1,0 +1,135 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#main{
+  height: 100%;
+  width: 100%;
+  background-color: #F7F9FC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#card{
+  height: 70vh;
+  width: 28vw;
+  border: .2px solid rgba(128, 128, 128, 0.457);
+  border-radius: 10px;
+}
+#card #top{
+    height: 35%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 10px;
+}
+#card #top img{
+    width: 20%;
+    /* width: 100%; */
+}
+#card #top a img{
+    height: 25px;
+    width: 25px;
+}
+#card #top a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    gap: 5px;
+}
+#card #top h2{
+    font-weight: 500;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+#card #top h4{
+    font-weight: 500;
+    font-weight: 500;
+}
+
+#card #mid{
+    height: 65%;
+    width: 100%;
+    position: relative;
+}
+#card #mid form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+#card #mid form input{
+    padding: 15px 20px;
+    height: 55px;
+    width: 80%;
+    border-radius: 5px;
+    outline: none;
+    border: .2px solid rgba(128, 128, 128, 0.457);
+    cursor: pointer;
+}
+#card #mid form button{
+    cursor: pointer;
+    position: absolute;
+    right: 0%;
+    top: 130%;
+    transform: translate(-50%,-50%);
+    height: 35px;
+    width: 5vw;
+    background-color: #308DEE;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+    border: .2px solid rgba(128, 128, 128, 0.457);
+    transition: all linear;
+}
+#card #mid form button:hover{
+    background-color: #1B66C9;
+}
+#card #mid form input::placeholder{
+    font-size: 15px;
+    font-weight: 400;
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+#card #mid a{
+    position: absolute;
+    left: 23%;
+    top: 80%; 
+    transform: translate(-50%,-50%);
+    color: #308DEE;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#main #bottam{
+    height: 50px;
+    width: 28vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main #bottam a{
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+
+
+
+
+
