@@ -22,11 +22,10 @@ const storage = multer.diskStorage({
     cb(null, './public/uploads')
   },
   filename: function (req, file, cb) {
-    // const nd = new Date()
-    // const fn = nd.getTime() + Math.floor(Math.random()*1000000) + path.extname(file.originalname)
-    // cb(null, file.fieldname + fn)
-    cb(null, Date.now() + '-' + file.originalname);
-
+    const nd = new Date()
+    const fn = nd.getTime() + Math.floor(Math.random()*1000000) + path.extname(file.originalname)
+    cb(null, file.fieldname + fn)
+    // cb(null, Date.now() + '-' + file.originalname);
   }
 })
 
@@ -48,7 +47,6 @@ passport.use(new GoogleStrategy({
   else
   {
     let newUser = await usermodel.create({username:profile.displayName,email:profile.emails[0].value})
-      
     return cb(null,newUser);
   }
 }));
@@ -120,7 +118,7 @@ function isloggedin (req,res,next){
   }
 }
 
-router.post("/uploadfiles",upload.single("file") ,isloggedin, (req,res)=>{
+router.post("/uploadfiles",upload.single("file"),isloggedin, (req,res)=>{
   usermodel.findOne({username:req.session.passport.user}).then(function(loggedinuser){
     filesmodel.create({
       username: loggedinuser._id,
