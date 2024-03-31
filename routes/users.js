@@ -1,8 +1,11 @@
 var mongoose = require("mongoose")
 var plm = require("passport-local-mongoose")
 
-mongoose.connect(process.env.MONGODB_URL)
-// mongoose.connect("mongodb+srv://jatinahirwar1089:TpCfsp1YbBV0lgYP@google-drive.bsn70zk.mongodb.net/?retryWrites=true&w=majority&appName=google-drive")
+mongoose.connect(process.env.MONGODB_URL).then(function(){
+  console.log("connected to db")
+}).catch((error)=>{
+  console.log(error)
+})
 
 var userschema = mongoose.Schema({
   email: String,
